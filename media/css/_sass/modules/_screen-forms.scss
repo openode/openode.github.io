@@ -1,0 +1,191 @@
+// ==========================================================================
+// Title:        Forms
+// ==========================================================================
+
+// ==========================================================================
+// =errors
+// ==========================================================================
+
+
+// ==========================================================================
+// =basic
+// ==========================================================================
+
+fieldset,
+.fieldset {
+    padding: 15px 0 0;
+    margin: 0 0 25px;
+}
+
+legend {
+    padding: 5px 0 15px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.legend {
+    padding: 10px 0 0;
+    margin: 0 0 15px;
+
+    .title {
+        font-size: 18px;
+    }
+    label {
+        &:after {
+            content: "";
+        }
+    }
+}
+
+label,
+.label {
+    font-weight: bold;
+    display: block;
+    line-height: 25px;
+}
+
+label,
+.label,
+h3.required {
+    &.required:after {
+        color: red;
+        content: " *";
+    }
+}
+
+.input-text {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+// ==========================================================================
+// =layout
+// ==========================================================================
+
+.buttons {
+    padding: 10px 0 10px;
+    line-height: 30px;
+
+    .btn {
+        margin-left: 5px;
+    }
+    &.buttons-left .btn {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+}
+
+.no-label {
+    padding: 25px 0 0;
+    line-height: 32px;
+}
+
+.label-inline {
+    label {
+        display: inline;
+    }
+}
+
+.label-colon {
+    label:after {
+        content: ":";
+    }
+}
+
+.field {
+    margin: 0 0 7px;
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+}
+
+
+// ==========================================================================
+// =buttons
+// ==========================================================================
+
+// ==========================================================================
+// =buttons
+// ==========================================================================
+
+.button {
+    color: #0045be;
+    //background-color: $white;
+    border: none;
+    font-weight: normal;
+    text-shadow: 1px 1px 0px $white;
+    filter: dropshadow(color=$white, offx=1, offy=1);
+    
+    @include box-shadow(rgba(0,0,0,0.75) 1px 1px 5px 0px);
+    background: $white url(i/e-button-ie-bg.png) repeat-x left top;
+    @include filter-gradient(#fefefe, #c2c2c2, vertical);
+    @include background-image(linear-gradient(top, #fefefe 0%, #c2c2c2 100%));
+    
+    &:hover {
+        color: #0045be;
+        background-image: none;
+        //background-color: $white;
+        background: $white url(i/e-button-ie-bg.png) repeat-x left top;
+        @include filter-gradient(#fefefe, #c2c2c2, vertical);
+        @include background-image(linear-gradient(top, #fefefe 0%, #c2c2c2 100%));
+    }
+    
+    &.large {
+        height: 53px;
+        line-height: 53px;
+        padding: 0 20px;
+        font-size: emCalc(16px);
+    }
+    
+    &.radius {
+        @include border-radius(5px);
+    }
+}
+
+// ==========================================================================
+// =inputs
+// ==========================================================================
+
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 1px solid #b6c0cd;
+    line-height: 20px;
+    padding: 5px 10px;
+    color: #626976;
+    margin: 0 5px 0 0;
+
+    @include transition-property(box-shadow);
+    @include transition-duration(800ms);
+    @include border-radius(3px);
+
+    &:hover {
+        border-color: gray;
+    }
+
+    &:focus {
+        outline: 0;
+        border-color: gray;
+
+        @include box-shadow(rgba(126, 181, 234, 0.8) 0px 0px 5px 0px);
+    }
+    &.sys-form-error {
+        border-color: #eda1a1;
+    }
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 32px;
+}
+
+input[type="text"][disabled="disabled"] ,
+input[type="password"][disabled="disabled"],
+textarea[disabled="disabled"] {
+    border: 1px solid #CCCCCC;
+
+    @include box-shadow(none);
+}
